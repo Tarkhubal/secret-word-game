@@ -1,4 +1,5 @@
 from random import *
+import sys
 
 # Les variables :
 # - input_user_word : Le mot entré par l'utilisateur
@@ -42,12 +43,12 @@ def exe(input_user_word):       # Fonction principale
         for eachletter in range(len(user_score)):                   # Pour chaque lettre de la liste du résultat du score de l'utilisateur
             final_user_score += user_score[eachletter]              # On assemble les lettres de la liste dans la variable en un string
 
-    return "User word : " + str(input_user_word) + "\nWord of the program : " + str(random_word) + "\nCorrected answer : " + str(final_user_score)
+    return "User word : " + str(input_user_word.capitalize()) + "\nWord of the program : " + str(random_word.capitalize()) + "\nCorrected answer : " + str(final_user_score)
     # On retourne le mot de l'utilisateur, le mot du programme et le résultat du score de l'utilisateur
 
 
 # On appelle la fonction avec le mot de l'utilisateur en argument
-print(exe("PopluAR"))
+sys.stdout.write(exe("PopluAR"))
 
 # [Non nécessaire] On attend que l'utilisateur appuie sur Entrée pour fermer le programme
-exit = input("Press Enter to exit.")
+exit = input("\nPress Enter to exit.")
