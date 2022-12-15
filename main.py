@@ -37,8 +37,8 @@ def exe(input_user_word):
     varMain_random_word = ["Abandon", "Abattre", "Envoyer", "Discord", "Appuyer", "Estimer", "Bazooka", "Balayer", "Cyclope", "Culture", "Crouton", "Croquer", "Cristal", "Carotte",
                            "Anglais", "Abricot", "Drakkar", "Anxieux", "Achever", "Grizzly", "Whiskey", "Aileron", "Aboyeur", "Abeille", "Italien", "Laitage", "Polluer", "Records", "Ottoman", "Moroses"][randint(0, 29)]  # L'ordinateur choisi un mot aléatoire dans la liste de 30 mots
 
-    # -dev-# print(varMain_random_word)
-    # -dev-# varMain_user_word = input("Entrez un mot : ")
+    # -dev- # print(varMain_random_word)
+    # -dev- # varMain_user_word = input("Entrez un mot : ")
 
     varMain_user_word.lower()
     varMain_random_word.lower()
@@ -47,17 +47,17 @@ def exe(input_user_word):
     else:
         varMain_userword_caracteres_list = decomposer(
             varMain_user_word)
-        # -dev-# print(varMain_userword_caracteres_list)
+        # -dev- # print(varMain_userword_caracteres_list)
         varMain_randomword_caracteres_list = decomposer(
             varMain_random_word)
-        # -dev-# print(varMain_randomword_caracteres_list)
+        # -dev- # print(varMain_randomword_caracteres_list)
         for i in range(len(varMain_userword_caracteres_list)):
             if varMain_user_word[i].lower() == varMain_random_word[i].lower():
                 varMain_user_score[i] = varMain_random_word[i]
-                # -dev-# print("correct letter" + str(i))
+                # -dev- # print("correct letter" + str(i))
             else:
                 varMain_user_score[i] = "_"
-                # -dev-# print("incorrect letter" + str(i))
+                # -dev- # print("incorrect letter" + str(i))
 
         varMain_user_score = assembler(varMain_user_score)
 

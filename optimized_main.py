@@ -6,7 +6,7 @@ import sys
 # - random_word : Le mot choisi aléatoirement par le programme
 # - user_score : Le score de l'utilisateur
 # - userword_lettering_list : La liste des caractères du mot de l'utilisateur
-# - final_user_score : Le score final de l'utilisateur (avec les lettres trouvées et les lettres non trouvées (remplacées par des "_"))
+# - final_user_score : Le score final de l'utilisateur (avec les lettres trouvées et les lettres non trouvées (remplacées par des "#"))
 
 
 class ansi():
@@ -14,7 +14,7 @@ class ansi():
         return "\33[{bg};{fg};{style}m".format(bg=bg, fg=fg, style=style)
 
 
-def exe(input_user_word):       # Fonction principale
+def exe(input_user_word):       # Fonction principale d'exécution
     assert type(input_user_word) == str, "Votre valeur doit être un mot (string) ! (only_string)"
     assert not(" " in input_user_word), "Votre valeur ne doit pas contenir d'espace ! (no_space_in_input)"
     assert len(input_user_word) == 7, "Le mot doit contenir 7 lettres. (only_7_letters)"
@@ -24,7 +24,7 @@ def exe(input_user_word):       # Fonction principale
                    "Ottoman", "Moroses"][randint(0, 29)]  # Génère une lise de mots et en choisit un aléatoirement
 
     ### >>> DEV DEBUG <<< ###
-    random_word = ["Polluer", "Polluer"][randint(0, 1)]
+    # random_word = ["Polluer", "Polluer"][randint(0, 1)]
     ### >>> END DEBUG <<< ###
 
     input_user_word = input_user_word.lower()                                                   # | On met les mots en minuscule
@@ -42,7 +42,7 @@ def exe(input_user_word):       # Fonction principale
             if input_user_word[i] == random_word[i]:                                            # Si la lettre est égale à la lettre du mot du programme qui est à la même position dans le mot
                 user_score[i] = ansi.color(0, 49, 32) + random_word[i] + ansi.color(0,49,39)    # Alors on ajoute la lettre du mot du programme à la liste
             else:                                                                               # Sinon
-                user_score[i] = ansi.color(5, 49, 31) + "#" + ansi.color(0, 49, 39)             # On ajoute un "_" à la liste (à la place de la lettre du mot du programme)
+                user_score[i] = ansi.color(5, 49, 31) + "#" + ansi.color(0, 49, 39)             # On ajoute un "#" à la liste (à la place de la lettre du mot du programme)
 
         final_user_score = ""                                       # Création d'une variable vide pour le score final de l'utilisateur
         for eachletter in range(len(user_score)):                   # Pour chaque lettre de la liste du résultat du score de l'utilisateur
@@ -53,7 +53,7 @@ def exe(input_user_word):       # Fonction principale
 
 
 # On appelle la fonction avec le mot de l'utilisateur en argument
-sys.stdout.write(exe("Polluer"))
+sys.stdout.write(exe("IZFHN PZOGJZ"))
 
 # [Non nécessaire] On attend que l'utilisateur appuie sur Entrée pour fermer le programme
 exit = input("\nPress Enter to exit.")
