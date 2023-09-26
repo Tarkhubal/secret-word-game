@@ -2,6 +2,3 @@ no print
 no input
 programmation de sécurité assert
 que des fonctions
-
-notes :
-raise(String) : assert compressé
